@@ -8,20 +8,6 @@ sudo apt-get install nginx -y
 
 sudo apt-get install python-software-properties -y
 
-curl -sL https://deb.nodesource.com/setup_6.x | sudo -E bash -
-
-sudo apt-get install -y nodejs
- 
-sudo apt-get install -y npm
-
-sudo npm install -g pm2
-
-# sudo echo "127.0.0.1       app" >> /etc/hosts
-# hostnamectl set-hostname app
-
-# seeding the database
-node ~/app/seeds/seed.js
-
 sudo echo "server {
     listen 80;
 
@@ -38,7 +24,18 @@ sudo echo "server {
 }" | sudo tee /etc/nginx/sites-available/default
 
 sudo systemctl restart nginx
+ 
 
-# sudo echo "export DB_HOST=mongodb://DB_PRIVATE_IP:27017/posts" >> ~/.bashrc
+# curl -sL https://deb.nodesource.com/setup_6.x | sudo -E bash -
+ 
+# sudo apt-get install -y npm
 
-# source ~/.bashrc
+# sudo apt-get install -y nodejs
+
+# sudo npm install -g pm2
+
+# sudo echo "127.0.0.1       app" >> /etc/hosts
+# hostnamectl set-hostname app
+
+# seeding the database
+# node ~/app/seeds/seed.js
