@@ -5,7 +5,8 @@ Description=Web App
 Type=simple
 Restart=on-failure
 Environment=NODE_PORT=3000
-ExecStart=/usr/bin/nodejs /home/ubuntu/eng84_cicd/app/app.js
+Environment=DB_HOST=mongodb://10.0.2.100:27017/posts
+ExecStart=/usr/bin/nodejs /home/ubuntu/provision/app/app.js
 User=ubuntu
 # Note Debian/Ubuntu uses 'nogroup', RHEL/Fedora uses 'nobody'
 Group=nogroup
