@@ -25,17 +25,20 @@ sudo echo "server {
 
 sudo systemctl restart nginx
  
+# install nodejs6.x and npm
+sudo echo "export DB_HOST=mongodb://10.0.2.100:27017/posts" >> /home/ubuntu/.bashrc
 
-# curl -sL https://deb.nodesource.com/setup_6.x | sudo -E bash -
- 
-# sudo apt-get install -y npm
+source /home/ubuntu/.bashrc
 
-# sudo apt-get install -y nodejs
+sudo apt-get install npm -y
 
-# sudo npm install -g pm2
+sudo npm install -g pm2
 
-# sudo echo "127.0.0.1       app" >> /etc/hosts
+curl -sL https://deb.nodesource.com/setup_6.x | sudo -E bash -
+
+sudo apt-get install nodejs -y
+
+cd ~/app
+
+npm install
 # hostnamectl set-hostname app
-
-# seeding the database
-# node ~/app/seeds/seed.js
